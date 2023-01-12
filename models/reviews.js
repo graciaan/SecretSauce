@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const { DataTypes, DataTypes, DataTypes, DataTypes, DataTypes } = require('sequelize/types');
 const sequelize = require('../config/connection');
 
 class Reviews extends Model {}
@@ -26,6 +25,10 @@ Reviews.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'users',
+        key: 'id'
+      },
     }, 
     date_Created: {
       type: DataTypes.DATE,
