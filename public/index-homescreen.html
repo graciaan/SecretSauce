@@ -9,117 +9,75 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Satisfy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="./public/css/style.css" />
   </head>
 
   <body>
-      <!-- Hero section -->
-      <section class="hero is-primary is-small">
-        <!-- Hero head -->
-        <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <a class="navbar-item">
-                  <!-- <img src="https://" alt="Logo">
-                </a> -->
-                <span class="navbar-burger" data-target="navbarMenuHeroA">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-
-              <div id="navbarMenuHeroA" class="navbar-menu">
-                <div class="navbar-end">
-                  <a class="navbar-item is-active">
-                    Home
-                  </a>
-                  <a class="navbar-item">
-                    Login
-                  </a>
-                  <a class="navbar-item">
-                    Saved Recipes
-                  </a>
-                  <span class="navbar-item">
-                    <a class="button is-primary is-inverted">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Download Recipes</span>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </nav>
+      <!-- Navbar section -->
+     <section>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/public/images/Secretsaucepic.png" alt="Logo" width="250" height="24" class="d-inline-block align-text-top">
+          </a>
         </div>
-      
-        <!-- Hero content -->?
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <p class="title">
-              Secret Sauce
-            </p>
-            <p class="subtitle">
-              Recipes
-            </p>
+      </nav>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-outline-success me-2" type="button">Home</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-outline-success me-2" type="button">Login</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-outline-success me-2" type="button">Saved Recipes</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-outline-success me-2" type="button">Post a Recipe</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-outline-success me-2" type="button">Mystery Recipes</button>
+              </li>
+            </ul>
           </div>
         </div>
-      
-        <!-- Hero footer -->
-        <div class="hero-foot">
-          <nav class="tabs">
-            <div class="container">
-              <ul>
-                <li class="container has-text-centered"></div></li>
-                <li><a>Post</a></li>
-                <li><a>Saved Recipes</a></li>
-                <li><a>Rate Recipes</a></li>
-                <li><a>Mystery Recipes</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </section>
+      </nav>
+     </section>
 
-      <section>
-        <br>
-        <br>
-        <br>
-        <p class="title">
-          User Login
-        </p>
-        <div class="field">
-          <p class="control has-icons-left has-icons-right">
-            <input class="input" type="email" placeholder="Email">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-            </span>
-          </p>
+     <section>
+      <img src="/public/images/background-pic.jpg" class="img-fluid" alt="background">
+     </section>
+     
+     <br>
+     <br>
+     <section>
+      <div class="card">
+        <div class="card-body">
+          Most Popular Recipes
         </div>
-        <div class="field">
-          <p class="control has-icons-left">
-            <input class="input" type="password" placeholder="Password">
-            <span class="icon is-small is-left">
-              <i class="fas fa-lock"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <p class="control">
-            <button class="button is-success">
-              Login
-            </button>
-          </p>
-        </div>
-      </section>
+      </div>
+     </section>
 
     <section>
-     <footer class="footer"></footer>
+      <section>
+        <div class="card">
+          <h5 class="card-header">Webiste developed by:</h5>
+          <div class="card-body">
+            <h5 class="card-title">Javi Alvarez, Andrew Gracia, Lisette Morales, & Anthony Reedy
+              </h5>
+            <p class="card-text">Incorporated Bootstrap and Images from Google.</p>
+          </div>
+        </div>
+      </section>
     </section>
 
   </body>
