@@ -9,6 +9,7 @@ Reviews.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
+      primaryKey: true,
     },
     review: {
       type: DataTypes.STRING,
