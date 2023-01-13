@@ -11,10 +11,13 @@ router.get('/', async (req, res) => {
         const recipes = recipeData.map((recipe) =>
             recipe.get({ plain: true })
         );
-
-        res.render('homepage', {
+        //below is for handlebars when that is ready
+       /*  res.render('homepage', {
             recipes,
-        });
+        }); */
+        
+        //to test with insomnia
+        res.status(200).json(recipeData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
