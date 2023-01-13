@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+//Login
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout
+//Logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
