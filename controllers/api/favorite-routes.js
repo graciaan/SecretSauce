@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Favorites } = require('../../models');
+const withAuth = require('../../utils/auth')
 
 // CREATE a new favorite
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newFavorite = await Favorites.create({
             recipe_id: req.body.recipe_id,
