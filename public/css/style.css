@@ -1,17 +1,50 @@
+*{
+   font-family: 'Gemunu Libre', sans-serif;
+}
+
+
+
 body {
-    font-family: 'Sofia Sans', sans-serif;
+    background: #8BA888;
+    font-family: 'Gemunu Libre', sans-serif;
     min-height: 75rem;
     padding-top: 4.5rem;
 }
+
+
+
 h1,h2,h3,h4,h5,h6{
     font-family: 'Gemunu Libre', sans-serif;
-    
 }
 p{
     font-family: 'Gemunu Libre', sans-serif;
     font-size: 20px;
 }
 
+textarea {
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: 20px;
+}
+div{
+    font-family: 'Sofia Sans', sans-serif;
+}
+
+.textbox{
+    margin-top:5%;
+    margin-left:5%;
+    margin-right:5%;
+}
+.titlebox{
+    margin-top:8%;
+    margin-left:8%;
+    margin-right:8%;
+}
+.filebox{
+    margin-left:20%;
+    margin-right:20%;
+    margin-top:2%;
+    margin-bottom:2%;
+}
 .card{
     margin-left: 10%;
     margin-top:10%;
