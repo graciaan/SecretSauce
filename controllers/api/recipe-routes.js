@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
             description: req.body.description,
             ingredients: req.body.ingredients,
             instructions: req.body.instructions,
-            user_id: req.params.id,
+            user_id: req.session.user_id,
             category_id: req.body.category_id,
         });
 
