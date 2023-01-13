@@ -11,8 +11,6 @@ body {
     padding-top: 4.5rem;
 }
 
-
-
 h1,h2,h3,h4,h5,h6{
     font-family: 'Gemunu Libre', sans-serif;
 }
@@ -27,6 +25,14 @@ textarea {
 }
 div{
     font-family: 'Sofia Sans', sans-serif;
+}
+
+.recipe-image{
+    margin:6%
+}
+
+.saved-image{
+    margin:6%
 }
 
 .textbox{
@@ -45,19 +51,8 @@ div{
     margin-top:2%;
     margin-bottom:2%;
 }
-.card{
-    margin-left: 10%;
-    margin-top:10%;
-    margin-right:10%;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-  padding: 14px 80px 18px 36px;
-  cursor: pointer;
-}
 
-.card:hover{
+.saved-image:hover{
     transform: scale(1.05);
  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
