@@ -23,12 +23,12 @@ Recipes.belongsTo(Users, {
   foreignKey: 'user_id',
 });
 
-Recipes.hasOne(Categories, {
+Categories.hasMany(Recipes, {
   foreignKey: 'category_id',
   onDelete: 'CASCADE'
 });
 
-Categories.belongsTo(Recipes, {
+Recipes.belongsTo(Categories, {
   foreignKey: 'category_id',
 });
 
