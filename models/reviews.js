@@ -31,7 +31,7 @@ Reviews.init(
         key: 'id'
       },
     }, 
-    date_Created: {
+    date_created: {
       type: DataTypes.DATE,
       allowNull: false,
     },
