@@ -50,13 +50,13 @@ router.get('/api/mystery-recipe', (req, res) => {
       })
       .then(recipe => {
           if (!recipe) {
-              res.status(404).send('No recipe found');
+              res.status(404).json('No recipe found');
           } else {
               res.json(recipe);
           }
       })
       .catch(error => {
-          res.status(500).send(error);
+          res.status(500).json(error);
       });
 });
 
