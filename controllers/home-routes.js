@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Recipes, Categories, Favorites, reviews, Users } = require('../models');
+const sequelize = require('../config/connection');
+const { Recipes, Categories, Favorites, Reviews, Users } = require('../models');
 
 // GET all recipes for homepage
 router.get('/', async (req, res) => {
@@ -20,6 +21,26 @@ router.get('/', async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
+});
+
+router.get('/api/mystery-recipe', (req, res) => {
+  Recipes.count()
+      .then(count => {
+          var random = Math.floor(Math.random() * count);
+          return Recipes.findOne({
+              offset: random
+          });
+      })
+      .then(recipe => {
+          if (!recipe) {
+              res.status(404).send('No recipe found');
+          } else {
+              res.json(recipe);
+          }
+      })
+      .catch(error => {
+          res.status(500).send(error);
+      });
 });
 
 module.exports = router;
