@@ -12,12 +12,10 @@ router.get('/', async (req, res) => {
             recipe.get({ plain: true })
         );
         //below is for handlebars when that is ready
-       /*  res.render('homepage', {
-            recipes,
-        }); */
+        res.render('homepage');
         
         //to test with insomnia
-        res.status(200).json(recipeData);
+        //res.status(200).json(recipeData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
