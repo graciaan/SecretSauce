@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Reviews } = require('../../models');
+const sequelize = require('../../config/connection');
+const { Reviews, Recipes } = require('../../models');
 
 // CREATE new review
 router.post('/', async (req, res) => {
@@ -17,5 +18,20 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/api/reviews/:recipe_id', async (req, res) => {
+  try {
+      const reviews = await Reviews.findAll({
+          where: {
+              recipe_id: req.params.recipe_id
+          }
+      });
+      res.json(reviews);
+  } catch (error) {
+      res.status(500).send(error);
+  }
+});
+
+
 
 module.exports = router;
