@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
         res.render('homepage',{
          recipes
         });
-        
+        //test
         //to test with insomnia
         //res.status(200).json(recipeData);
     } catch (err) {
