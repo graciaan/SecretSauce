@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 const { Recipes, Categories, Favorites, Reviews, Users } = require('../models');
 
@@ -7,31 +6,15 @@ const { Recipes, Categories, Favorites, Reviews, Users } = require('../models');
 router.get('/', async (req, res) => {
     try {
         const recipeData = await Recipes.findAll({
-            attributes: [
-                'title',
-                'description',
-                [Sequelize.fn('AVG', Sequelize.col('reviews.rating')), 'avgRating'],
-            ],
-            include: [
-                {
-                    model: Reviews,
-                    attributes: [],
-                },
-            ],
-            group: ['recipes.id', 'reviews.recipe_id'],
-            order: [
-                ['avgRating', 'DESC'],
-            ],
+            attributes: ['title']
         });
 
         const recipes = recipeData.map((recipe) =>
             recipe.get({ plain: true })
         );
         //below is for handlebars when that is ready
-        res.render('homepage',{
-         recipes
-        });
-        //test
+        res.render('homepage');
+        
         //to test with insomnia
         //res.status(200).json(recipeData);
     } catch (err) {
