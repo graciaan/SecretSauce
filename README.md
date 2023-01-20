@@ -1,6 +1,35 @@
-# SecretSauce
+# Secret Sauce
 
-# Description
+## Authors
+```
+Javi Alvarez 
+Andrew Gracia 
+Lisette Morales
+Anthony Reedy
+```
+
+## Description 
+Our project will be a recipe sharing website for users to share their secret family recipes with others. They would be required to create an account and log in in order to post, save, or rate them. The home page will show the most popular recipes (by rating). 
+
+## URL of Deployed Application
+
+
+## Screenshot of Application
+![Secret Sauce Project]()
+
+![Secret Sauce Project]()
+
+![Secret Sauce Project]()
+
+![Secret Sauce Project]()
+
+![Secret Sauce Project]()
+
+![Secret Sauce Project]()
+
+![Secret Sauce Project]()
+
+![Secret Sauce Project]()
 
 ## Project Guidelines stated as:
 
