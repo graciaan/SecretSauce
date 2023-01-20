@@ -1,7 +1,7 @@
 const Categories = require('./Categories');
 const Favorites = require('./Favorites');
 const Recipes = require('./Recipes');
-const Reviews = require('./Reviews');
+const Reviews = require('./reviews');
 const Users = require('./Users');
 
 Users.hasMany(Recipes, {
