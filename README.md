@@ -19,15 +19,27 @@ Our project will be a recipe sharing website for users to share their secret fam
 
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600594-8980ef39-579c-4eca-8d00-4b97dea735a3.png)
 
+
+
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600642-deac7f68-0062-47a5-9b6c-b256505976df.png)
+
+
 
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600697-c2f8533b-2789-47e1-9215-9d9a5e0f22da.png)
 
+
+
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600760-42801e73-c5ae-46dc-bc00-d2a1316a7314.png)
+
+
 
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600793-0317eb55-92c1-4e90-bc5d-6028f2d83b3e.png)
 
+
+
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600821-4f808ae2-96f4-416a-86cd-e36e01945eb5.png)
+
+
 
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213602106-5680d5a5-f1e7-441c-b36d-c5caf335d3ef.png)
 
