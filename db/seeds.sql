@@ -1,9 +1,9 @@
 -- run this in workbench to seed users
-insert into users (username, email, password)
-values ("roger104", "test@test.com", "abcd123456"),
-("jondoe", "jon@test.com", "abcd123456"),
-("janedow", "jane@test.com", "abcd123456"),
-("fred", "fred@test.com", "abcd123456");
+insert into users (username, password)
+values ("roger104", "abcd123456"),
+("jondoe", "abcd123456"),
+("janedow", "abcd123456"),
+("fred",  "abcd123456");
 
 -- run this in workbench to seed categories
 insert into categories (category)
