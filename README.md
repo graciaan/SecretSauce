@@ -15,7 +15,7 @@ Our project will be a recipe sharing website for users to share their secret fam
 
 
 ## Screenshot of Application
-![Secret Sauce Project]()
+![Secret Sauce Project](png)
 
 ![Secret Sauce Project]()
 
