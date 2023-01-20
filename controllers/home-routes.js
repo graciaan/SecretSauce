@@ -46,7 +46,12 @@ router.get('/api/mystery-recipe', (req, res) => {
         .then(count => {
             var random = Math.floor(Math.random() * count);
             return Recipes.findOne({
-                offset: random
+                offset: random,
+                include: [
+                  {
+                      model: Reviews,
+                  },
+                ],
             });
         })
         .then(recipe => {
