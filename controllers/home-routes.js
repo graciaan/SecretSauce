@@ -49,7 +49,7 @@ router.get('/api/mystery-recipe', (req, res) => {
                 offset: random,
                 include: [
                   {
-                      model: Reviews,
+                      model: Users,
                   },
                 ],
             });
