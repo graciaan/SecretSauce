@@ -1,18 +1,18 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Users } = require('../../models');
 const { body, validationResult } = require('express-validator');
+
 
 //Creates New User
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const dbUserData = await Users.create({
       username: req.body.username,
       password: req.body.password,
     });
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -21,10 +21,11 @@ router.post('/', async (req, res) => {
   }
 });
 
+
 //Login
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const dbUserData = await Users.findOne({
       where: {
         username: req.body.username,
       },
@@ -67,7 +68,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    User.create({
+    Users.create({
       username: req.body.username,
       password: req.body.password,
     }).then(user => res.json(user));
