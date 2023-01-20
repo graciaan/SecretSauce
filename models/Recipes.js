@@ -41,6 +41,10 @@ Recipes.init(
                 key: 'id',
             },
         },
+        filename: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
     },
     {
         sequelize,
