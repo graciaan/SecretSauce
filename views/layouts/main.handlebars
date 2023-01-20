@@ -38,21 +38,39 @@
                 <button id="homebtn" class="btn btn-outline-success me-2" type="button">Home</button>
               </a>
             </li>
+            {{#if loggedIn}}
             <li class="nav-item">
-              <a href="/login">
-                <button id="loginbtn" class="btn btn-outline-success me-2" type="button">Login</button>
+              <a href="/logout">
+                <button id="logout" class="btn btn-outline-success me-2" type="button">Logout</button>
               </a>
             </li>
+            {{else}}
+            <li class="nav-item">
+              <a href="/login">
+                <button id="login" class="btn btn-outline-success me-2" type="button">Login</button>
+              </a>
+            </li>
+            {{/if}}
+
+            {{#if loggedIn}}
             <li class="nav-item">
               <a href="/saved">
                 <button id="savedbtn" class="btn btn-outline-success me-2" type="button">Saved Recipes</button>
               </a>
             </li>
+            {{else}}
+            <section></section>
+            {{/if}}
+
+            {{#if loggedIn}}
             <li class="nav-item">
               <a href="/post">
                 <button id="postbtn" class="btn btn-outline-success me-2" type="button">Post a Recipe</button>
               </a>
             </li>
+            {{else}}
+            <section></section>
+            {{/if}}
             <li class="nav-item">
               <a href="/api/mystery-recipe">
                 <button id="mysterybtn" class="btn btn-outline-success me-2" type="button">Mystery Recipes</button>

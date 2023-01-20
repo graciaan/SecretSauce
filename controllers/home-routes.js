@@ -29,9 +29,7 @@ router.get('/', async (req, res) => {
             recipe.get({ plain: true })
         );
         //below is for handlebars when that is ready
-        res.render('homepage', {
-            recipes
-        });
+        res.render('homepage', {loggedIn: req.session.loggedIn});
         //test
         //to test with insomnia
         //res.status(200).json(recipeData);
@@ -94,5 +92,24 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+    
+  } else {
+    res.status(404).end();
+  }
+});
+
+router.get('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  res.render('homepage');
+}});
 
 module.exports = router;
