@@ -43,20 +43,25 @@ router.get('/api/mystery-recipe', async (req, res) => {
   try {
       const count = await Recipes.count();
       const random = Math.floor(Math.random() * count);
-      const recipe = await Recipes.findOne({
+      const recipeData = await Recipes.findOne({
           offset: random,
           include: [
             {
-                model: Users,
+              model: Users,
             },
           ],
       });
-      res.render('recipe');
-      if (!recipe) {
-          res.status(404).json('No recipe found');
+      const recipes = recipeData.map((recipe) =>
+        recipe.get({ plain: true })
+        );
+      if (!recipeData) {
+        res.status(404).json('No recipe found');
       } else {
-          res.render('recipe', { recipe });
-      }
+        res.render('recipe', {
+          recipes,
+          loggedIn: req.session.loggedIn
+        });
+      };
   } catch (error) {
       res.status(500).json(error);
   }
@@ -67,16 +72,13 @@ router.get('/api/mystery-recipe', async (req, res) => {
 router.get('/post', withAuth, async (req, res) => {
     try {
         const categoryData = await Categories.findAll();
-
         const categories = categoryData.map((category) =>
             category.get({ plain: true })
         );
-
         res.render('post', {
             categories,
             loggedIn: req.session.loggedIn
         });
-
     } catch (err) {
         res.status(500).json(err);
     }
@@ -88,27 +90,21 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
+    res.render('homepage'),
     req.session.destroy(() => {
       res.status(204).end();
     });
-    
+    // res.render('homepage')
   } else {
     res.status(404).end();
   }
 });
 
-router.get('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  res.render('homepage');
-}});
+
 
 module.exports = router;
