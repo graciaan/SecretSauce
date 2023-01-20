@@ -109,11 +109,7 @@ router.get('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-    
-  } else {
-    res.status(404).end();
-  }
   res.render('homepage');
-});
+}});
 
 module.exports = router;
