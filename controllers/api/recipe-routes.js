@@ -21,7 +21,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/api/recipes/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
       const recipe = await Recipes.findByPk(req.params.id);
       if (!recipe) {

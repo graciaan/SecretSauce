@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/api/reviews/:recipe_id', async (req, res) => {
+router.get('/:recipe_id', async (req, res) => {
   try {
       const reviews = await Reviews.findAll({
           where: {
