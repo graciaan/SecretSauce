@@ -39,34 +39,32 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/api/mystery-recipe', (req, res) => {
-    Recipes.count()
-        .then(count => {
-            var random = Math.floor(Math.random() * count);
-            return Recipes.findOne({
-                offset: random,
-                include: [
-                  {
-                      model: Users,
-                  },
-                ],
-            });
-        })
-        .then(recipe => {
-            if (!recipe) {
-                res.status(404).json('No recipe found');
-            } else {
-                res.json(recipe);
-            }
-        })
-        .catch(error => {
-            res.status(500).json(error);
-        });
+router.get('/api/mystery-recipe', async (req, res) => {
+  try {
+      const count = await Recipes.count();
+      const random = Math.floor(Math.random() * count);
+      const recipe = await Recipes.findOne({
+          offset: random,
+          include: [
+            {
+                model: Users,
+            },
+          ],
+      });
+      res.render('recipe');
+      if (!recipe) {
+          res.status(404).json('No recipe found');
+      } else {
+          res.render('recipe', { recipe });
+      }
+  } catch (error) {
+      res.status(500).json(error);
+  }
 });
 
 
 //get categories for posting recipe
-router.get('/post', async (req, res) => {
+router.get('/post', withAuth, async (req, res) => {
     try {
         const categoryData = await Categories.findAll();
 
@@ -75,7 +73,8 @@ router.get('/post', async (req, res) => {
         );
 
         res.render('post', {
-            categories
+            categories,
+            loggedIn: req.session.loggedIn
         });
 
     } catch (err) {
