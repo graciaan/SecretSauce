@@ -29,7 +29,7 @@ Our project will be a recipe sharing website for users to share their secret fam
 
 ![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600821-4f808ae2-96f4-416a-86cd-e36e01945eb5.png)
 
-![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213600868-4bfd9fcc-3dad-4671-b488-14a819f7a797.png)
+![Secret Sauce Project](https://user-images.githubusercontent.com/113862182/213602106-5680d5a5-f1e7-441c-b36d-c5caf335d3ef.png)
 
 
 ## Project Guidelines stated as:
