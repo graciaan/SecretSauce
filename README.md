@@ -12,7 +12,7 @@ Anthony Reedy
 Our project will be a recipe sharing website for users to share their secret family recipes with others. They would be required to create an account and log in in order to post, save, or rate them. The home page will show the most popular recipes (by rating). 
 
 ## URL of Deployed Application
-
+ https://damp-river-14558.herokuapp.com/
 
 
 ## Screenshot of Application
