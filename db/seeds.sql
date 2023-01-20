@@ -13,8 +13,8 @@ values ("dessert"),
 ("cocktail");
 
 -- run this in workbench to seed recipes
-insert into recipes (title, description, ingredients, instructions, user_id, category_id)
-values ("new recipe", "this is a new recipe", "eggs, other stuff", "add the stuff and stir", 1, 3),
+insert into recipes (title, description, ingredients, filename, instructions, user_id, category_id,)
+values ("Shrimp Scampi", "Marinated lemon and herb shrimp in a scampi sauce", "", "add the stuff and stir", 1, 3),
 ("PBJ", "peanut butter and jelly", "peanut butter, jelly, bread", "add the stuff and eat", 2, 1),
 ("ice cream sundae", "vanill ice cream with hot fudget", "vanilla ice cream, hot fudge", "add the stuff and eat", 3, 1);
 
