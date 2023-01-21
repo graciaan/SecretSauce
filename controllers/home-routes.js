@@ -51,16 +51,11 @@ router.get('/api/mystery-recipe', async (req, res) => {
             },
           ],
       });
-      const recipes = recipeData.map((recipe) =>
-        recipe.get({ plain: true })
-        );
+      const recipes = recipeData.get({ plain: true })
       if (!recipeData) {
         res.status(404).json('No recipe found');
       } else {
-        res.render('recipe', {
-          recipes,
-          loggedIn: req.session.loggedIn
-        });
+        res.render('recipe', recipes);
       };
   } catch (error) {
       res.status(500).json(error);
@@ -106,7 +101,8 @@ router.post('/logout', (req, res) => {
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {    
     req.session.destroy(() => {
-  res.render('homepage')
-})
-  }})
+    res.render('homepage')
+    });
+  };
+});
 module.exports = router;

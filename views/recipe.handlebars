@@ -1,11 +1,11 @@
 <div class="container">
     <div class="image">
-      <img src="/images/{{recipe.[0].filename}}" class="rounded img-fluid recipe-image" alt="...">
+      <img src="/images/{{filename}}" class="rounded img-fluid recipe-image" alt="...">
     </div>
     <div class="text">
       <h1 class="has-text-centered" style="font-size: xx-large; text-decoration:underline;font-weight: bolder;">{{title}}</h1>
    
-    <p>RECIPE BY: {{user_id}} </p>
+    <p>RECIPE BY: {{user.username}} </p>
     <p>RECIPE INSTRUCTIONS: {{instructions}} <br> </p>
     <h3>RECIPE INGREDIENTS: {{ingredients}}</h3>
       <ul>
