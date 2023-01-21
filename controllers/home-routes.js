@@ -39,45 +39,41 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/api/mystery-recipe', (req, res) => {
-    Recipes.count()
-        .then(count => {
-            var random = Math.floor(Math.random() * count);
-            return Recipes.findOne({
-                offset: random,
-                include: [
-                  {
-                      model: Users,
-                  },
-                ],
-            });
-        })
-        .then(recipe => {
-            if (!recipe) {
-                res.status(404).json('No recipe found');
-            } else {
-                res.json(recipe);
-            }
-        })
-        .catch(error => {
-            res.status(500).json(error);
-        });
+router.get('/api/mystery-recipe', async (req, res) => {
+  try {
+      const count = await Recipes.count();
+      const random = Math.floor(Math.random() * count);
+      const recipeData = await Recipes.findOne({
+          offset: random,
+          include: [
+            {
+              model: Users,
+            },
+          ],
+      });
+      const recipes = recipeData.get({ plain: true })
+      if (!recipeData) {
+        res.status(404).json('No recipe found');
+      } else {
+        res.render('recipe', recipes);
+      };
+  } catch (error) {
+      res.status(500).json(error);
+  }
 });
 
 
 //get categories for posting recipe
-router.get('/post', async (req, res) => {
+router.get('/post', withAuth, async (req, res) => {
     try {
         const categoryData = await Categories.findAll();
-
         const categories = categoryData.map((category) =>
             category.get({ plain: true })
         );
-
         res.render('post', {
-            categories
+            categories,
+            loggedIn: req.session.loggedIn
         });
-
     } catch (err) {
         res.status(500).json(err);
     }
@@ -89,27 +85,24 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn) {    
     req.session.destroy(() => {
       res.status(204).end();
     });
-    
   } else {
     res.status(404).end();
   }
 });
 
 router.get('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn) {    
     req.session.destroy(() => {
-      res.status(204).end();
+    res.render('homepage')
     });
-  res.render('homepage');
-}});
-
+  };
+});
 module.exports = router;
