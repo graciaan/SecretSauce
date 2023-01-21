@@ -93,9 +93,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    res.render('homepage'),
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {    
     req.session.destroy(() => {
       res.status(204).end();
     });
@@ -104,6 +103,10 @@ router.get('/logout', (req, res) => {
   }
 });
 
-
-
+router.get('/logout', (req, res) => {
+  if (req.session.loggedIn) {    
+    req.session.destroy(() => {
+  res.render('homepage')
+})
+  }})
 module.exports = router;
