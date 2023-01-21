@@ -11,9 +11,9 @@ router.post('/', withAuth, async (req, res) => {
             ingredients: req.body.ingredients,
             instructions: req.body.instructions,
             user_id: req.session.user_id,
-            category_id: req.body.category_id,
         });
 
+        console.log(req.session.user_id);
         res.status(200).json(newRecipe);
     } catch (err) {
         console.log(err);

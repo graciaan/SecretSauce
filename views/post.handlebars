@@ -2,25 +2,27 @@
      <!--text boxes for the description, ingredients, and instructions-->
      
      <div class="mb-3 titlebox">
-      <input class="form-control" placeholder="Recipe Title">
+      <input class="form-control" placeholder="Recipe Title" id="recipe-title">
     </div>
 
      <div class="mb-3 textbox">
-      <textarea placeholder= "Recipe Description" class="form-control" rows="3"></textarea>
+      <textarea placeholder= "Recipe Description" class="form-control" rows="3" id="recipe-description"></textarea>
     </div>
 
     <div class="mb-3 textbox">
-      <textarea placeholder= "Recipe Ingredients" class="form-control" rows="3"></textarea>
+      <textarea placeholder= "Recipe Ingredients" class="form-control" rows="3" id="recipe-ingredients"></textarea>
     </div>
 
     <div class="mb-3 textbox">
-      <textarea placeholder= "Recipe Instructions" class="form-control" rows="3"></textarea>
+      <textarea placeholder= "Recipe Instructions" class="form-control" rows="3" id="recipe-instructions"></textarea>
     </div>
     <!--This is the input for the files users will upload (pictures)-->
   <div class="d-flex justify-content-center filebox">  
     <input type="file" class="form-control" id="customFile" multiple/>
   </div>
     <div class="d-grid gap-2 d-md-flex justify-content-center">
-      <a href="http://www.google.com/" id="cancelbtn" class="btn btn-outline-dark col-2" role="button"><strong>CANCEL</strong></a>
+      <a href="/post" id="cancelbtn" class="btn btn-outline-dark col-2" role="button"><strong>CANCEL</strong></a>
       <a id="postonebtn" class="btn btn-outline-dark col-2" role="button"><strong>POST</strong></a>
     </div>
+    
+<script src="/js/new-recipe.js"></script>
