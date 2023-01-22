@@ -39,7 +39,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/api/mystery-recipe', async (req, res) => {
+router.get('/mystery-recipe', async (req, res) => {
   try {
       const count = await Recipes.count();
       const random = Math.floor(Math.random() * count);
@@ -51,11 +51,14 @@ router.get('/api/mystery-recipe', async (req, res) => {
             },
           ],
       });
-      const recipes = recipeData.get({ plain: true })
+      const recipes = recipeData.get({ plain: true });
       if (!recipeData) {
         res.status(404).json('No recipe found');
       } else {
-        res.render('recipe', recipes);
+        res.render('recipe', {
+          ...recipes,
+          loggedIn: req.session.loggedIn
+        });
       };
   } catch (error) {
       res.status(500).json(error);
