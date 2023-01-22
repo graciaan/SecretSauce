@@ -4,7 +4,21 @@ const { body, validationResult } = require('express-validator');
 
 
 //Creates New User
-router.post('/', async (req, res) => {
+router.post('/',
+body('password').isLength({ min: 5 }), 
+body('confirmPassword').custom((value, { req }) => {
+  if (value !== req.body.password) {
+    throw new Error('Password confirmation does not match password');
+  }
+
+  // Indicates the success of this synchronous custom validator
+  return true;
+}),
+async (req, res) => {
+  const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
   try {
     const dbUserData = await Users.create({
       username: req.body.username,
@@ -57,7 +71,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post(
+/* router.post(
   '/user',
   // username must alphanumeric
   body('username').isAlphanumeric(),
@@ -76,7 +90,7 @@ router.post(
     }).then(user => res.json(user));
   },
 );
-
+ */
 
 
 module.exports = router;
