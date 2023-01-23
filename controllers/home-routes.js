@@ -47,18 +47,18 @@ router.get('/', async (req, res) => {
 //get single recipe
 router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
-const recipeData = await Recipes.findByPk(req.params.id, {
-  include: [
+    const recipeData = await Recipes.findByPk(req.params.id, {
+    include: [
     {model: Users},
-  ],
-});
+    ],
+    });
 
-const recipes = recipeData.get({ plain:true });
+  const recipes = recipeData.get({ plain:true });
 
-res.render('recipe', {
-  ...recipes,
-  logged_in: req.session.logged_in
-});
+  res.render('recipe', {
+    ...recipes,
+    loggedIn: req.session.loggedIn,
+  });
 
   } catch (err) {
     res.status(500).json(err);
