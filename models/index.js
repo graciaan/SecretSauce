@@ -49,4 +49,13 @@ Reviews.belongsTo(Recipes, {
   foreignKey: 'recipe_id',
 });
 
+Recipes.hasMany(Favorites, {
+  foreignKey: 'recipe_id',
+  onDelete: 'CASCADE'
+});
+
+Favorites.belongsTo(Recipes, {
+  foreignKey: 'recipe_id'
+});
+
 module.exports = { Categories, Favorites, Recipes, Reviews, Users };
