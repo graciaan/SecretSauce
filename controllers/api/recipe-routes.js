@@ -21,7 +21,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+/* router.get('/:id', async (req, res) => {
   try {
       const recipe = await Recipes.findByPk(req.params.id);
       if (!recipe) {
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
   } catch (error) {
       res.status(500).json(error);
   }
-});
+}); */
 
 
 module.exports = router;
