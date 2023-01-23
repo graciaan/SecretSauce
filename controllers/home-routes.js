@@ -112,18 +112,16 @@ router.get('/post', withAuth, async (req, res) => {
 router.get('/saved', withAuth, async (req, res) => {
   try {
     console.log(req.session.user_id)
-    const favoriteData = await Favorites.findAll(
+    const userData = await Users.findByPk(req.session.user_id,
       {
-        where: {user_id: 6},
-        include: {model: Recipes}
+        include: [{ model: Recipes }]
       }
     );
 
-    const favorites = favoriteData.map((favorite) =>
-    favorite.get({ plain: true })
-    );
+    const user = userData.get({ plain: true });
+
     res.render('saved', {
-      favorites,
+      ...user,
       loggedIn: req.session.loggedIn
     });
   } catch (err) {
