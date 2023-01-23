@@ -21,18 +21,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-/* router.get('/:id', async (req, res) => {
-  try {
-      const recipe = await Recipes.findByPk(req.params.id);
-      if (!recipe) {
-          res.status(404).json('Recipe not found');
-      } else {
-          res.json(recipe);
-      }
-  } catch (error) {
-      res.status(500).json(error);
-  }
-}); */
+
 
 
 module.exports = router;

@@ -65,6 +65,7 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
   }
 });
 
+//route for the mystery recipe button
 router.get('/mystery-recipe', async (req, res) => {
   try {
     const count = await Recipes.count();
@@ -73,7 +74,7 @@ router.get('/mystery-recipe', async (req, res) => {
       offset: random,
       include: [
         {
-          model: Users,
+          model: Users,  //this makes sure that we can also pass the User name to the page
         },
       ],
     });
@@ -148,6 +149,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//takes the user back to the homepage once they log out
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
