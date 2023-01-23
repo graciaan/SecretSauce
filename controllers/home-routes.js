@@ -47,7 +47,11 @@ router.get('/', async (req, res) => {
 //get single recipe
 router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
-const recipeData = await Recipes.findByPk(req.params.id);
+const recipeData = await Recipes.findByPk(req.params.id, {
+  include: [
+    {model: Users},
+  ],
+});
 
 const recipes = recipeData.get({ plain:true });
 
