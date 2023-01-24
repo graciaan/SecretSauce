@@ -9,7 +9,8 @@ Anthony Reedy
 ```
 
 ## Description 
-Our project will be a recipe sharing website for users to share their secret family recipes with others. They would be required to create an account and log in in order to post, save, or rate them. The home page will show the most popular recipes (by rating). 
+Our project will be a recipe sharing website for users to share their secret family recipes with others. They would be required to create an account and log in in order to post them or view others. There is a Mystery Recipe feature that allows any user (logged in or not) to view a random recipe. The home page shows featured recipes for quick access. Technologies used in this app are: Node.js, Express, Express-Validator, Handlebars.js, Bulma, Bootstrap, MySQL, and Sequelize.
+
 
 ## URL of Deployed Application
  https://damp-river-14558.herokuapp.com/
